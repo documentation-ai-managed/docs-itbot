@@ -1,0 +1,133 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and bug fixes in ITBot to stay informed about new features and changes.
+---
+
+## Recent Updates
+
+ITBot releases updates regularly to enhance your documentation experience. Check this changelog to see what's new, including features, improvements, and fixes. You receive notifications via email or the dashboard when new versions deploy.
+
+<Callout kind="tip">
+  Enable notifications in your [dashboard](https://dashboard.example.com/settings/notifications) to stay current without checking manually.
+</Callout>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+## New Features
+
+- Added real-time collaboration, allowing multiple users to edit docs simultaneously with live cursors and conflict resolution.
+- Introduced version history with diff views, so you can compare changes and restore previous versions easily.
+
+## Improvements
+
+- Enhanced search with fuzzy matching and syntax highlighting for code blocks.
+- Optimized performance for large docs, reducing load times by `>40%`.
+
+## Bug Fixes
+
+- Fixed markdown rendering issues with nested lists and tables.
+- Resolved export failures for docs with embedded images.
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+## New Features
+
+- Integrated GitHub sync, enabling automatic pushes and pulls directly from your repo.
+- Added custom themes with your brand color (`#3B82F6`) support for headers and links.
+
+## Improvements
+
+- Streamlined onboarding with interactive tours for new users.
+- Better mobile responsiveness for editing on tablets and phones.
+
+## Bug Fixes
+
+- Corrected API rate limiting errors during bulk imports.
+- Patched security vulnerability in webhook handling (CVE-2024-XXXX).
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+## New Features
+
+- Core documentation workspace with folders, tags, and search.
+- Basic authentication via `YOUR_API_KEY` and OAuth integrations.
+
+## Breaking Changes
+
+- Updated config format from JSON to YAML for better readability.
+
+## Initial Setup
+
+Run this to migrate old configs:
+
+````bash
+itbot migrate-config --from json --to yaml
+````
+</Update>
+
+## Upgrade Instructions
+
+Follow these steps to update ITBot to the latest version.
+
+<Tabs>
+  <Tab title="npm" icon="package">
+    <Steps>
+      <Step title="Check Current Version" icon="info">
+        Run the version check command.
+````bash
+npm list itbot
+````
+      </Step>
+      <Step title="Update Package" icon="upload">
+        Install the latest release.
+````bash
+npm install itbot@latest
+````
+      </Step>
+      <Step title="Restart Service" icon="refresh-cw">
+        Restart to apply changes.
+````bash
+itbot restart
+````
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Docker" icon="docker">
+    Pull and redeploy the latest image.
+````bash
+docker pull itbot:latest
+docker-compose up -d
+````
+  </Tab>
+</Tabs>
+
+<Callout kind="alert">
+  Always back up your docs before upgrading. Test in staging if possible.
+</Callout>
+
+## Resources
+
+<Columns cols={3}>
+  <Card title="GitHub Releases" icon="github" href="https://github.com/itbot/releases" target="_blank">
+    Full release notes and assets.
+  </Card>
+  <Card title="Quickstart" icon="book-open" href="/quickstart">
+    Get started after upgrade.
+  </Card>
+  <Card title="Support" icon="help-circle" href="/help-center">
+    Report issues or ask questions.
+  </Card>
+</Columns>
+
+## Known Issues and Roadmap
+
+<ExpandableGroup>
+  <Expandable title="Current Known Issues" default-open="true">
+    - Large file uploads (`>100MB`) may timeout on slower networks. Workaround: Split files.
+    - Custom CSS in themes occasionally fails validation. Use inline styles temporarily.
+  </Expandable>
+  <Expandable title="Upcoming in v1.3.0">
+    - AI-powered doc generation and summaries.
+    - Advanced analytics for doc usage and engagement.
+    - Native Slack and Discord integrations.
+  </Expandable>
+</ExpandableGroup>
